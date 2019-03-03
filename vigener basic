@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    int p,k;
+char plaintext[100];
+gets(plaintext);
+char key[100];
+gets(key);
+
+p=strlen(plaintext);
+k=strlen(key);
+char key1[100];
+for(int i=0;i<p;i++)
+ key1[i]=key[(i%k)];
+ char cypher[p];
+ for(int i=0;i<p;i++)
+ {
+     cypher[i]=((((plaintext[i]-97)+(key1[i]-97))%26)+97);
+ }
+ printf("%s",cypher);
+return 0;
+}
